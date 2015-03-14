@@ -1,0 +1,36 @@
+.top-nav {
+  background-color: $color-luvit-blue;
+  border-bottom: 1px solid $color-off-white;
+  color: $color-off-white;
+  padding: 8px 0 16px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  @include e(brand) {
+    color: $color-off-white;
+    padding: 12px;
+    font-size: 20px;
+    font-weight: bold;
+
+    &:hover {
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
+
+  @include e(nav-link) {
+    color: $color-off-white;
+    font-family: $font-family-light;
+    font-size: 20px;
+    padding: 12px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-white;
+      border-bottom: 8px solid lighten($color-luvit-yellow, 30%);
+      background-color: lighten($color-luvit-blue, 10%);
+      text-decoration: none;
+    }
+  }
+}

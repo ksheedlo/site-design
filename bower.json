@@ -1,0 +1,29 @@
+{
+  "name": "site-design",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ksheedlo/site-design",
+  "authors": [
+    "Ken Sheedlo <ken.sheedlo@rackspace.com>"
+  ],
+  "description": "Common design elements and demos for *.luvit.io",
+  "main": "demo/index.html",
+  "keywords": [
+    "luvit",
+    "lua",
+    "blog",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.1",
+    "neat": "~1.7.2",
+    "normalize": "necolas/normalize.css#v3.0.2"
+  }
+}

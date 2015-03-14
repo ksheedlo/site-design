@@ -1,0 +1,29 @@
+.hero {
+  background-color: $color-luvit-blue;
+  color: $color-white;
+  padding: 144px 0 124px 0;
+  text-align: center;
+
+  @include e(heading) {
+    font-size: 108px;
+    line-height: normal;
+    margin: 0 0 20px 0;
+  }
+
+  @include e(subheading) {
+    font-family: $font-family-light;
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0 0 20px 0;
+  }
+
+  @include e(action-button) {
+    background-color: $color-luvit-blue;
+    border-radius: 3px;
+    border: 1px solid $color-white;
+    font-family: $font-family-light;
+    font-size: 20px;
+    padding: 20px 30px;
+    text-transform: uppercase;
+  }
+}

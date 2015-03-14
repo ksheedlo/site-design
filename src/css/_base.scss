@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $color-white;
+  color: $color-gray-dark;
+  font-family: $font-family-sans;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+}
+
+a {
+  color: $color-luvit-red;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+hr {
+  border-color: #ddd;
+  border-style: solid;
+  border-width: 1px;
+}
