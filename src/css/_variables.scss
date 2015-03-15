@@ -17,3 +17,10 @@ $font-family-light: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue
 // SIZES
 
 $footer-height: 100px;
+$luvit-max-width: em(800);
+$media-breakpoint-small: new-breakpoint(max-width $luvit-max-width);
+$media-breakpoint-xs: new-breakpoint(max-width em(500));
+
+// BOURBON/NEAT OVERRIDES
+
+$max-width: $luvit-max-width;

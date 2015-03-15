@@ -4,6 +4,7 @@
     <title>Luvit Design Demo</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="/css/tomorrow.css">
   </head>
   <body>
     <nav class="top-nav">
@@ -46,8 +47,8 @@
       </div>
       <div class="grid__container">
         <div class="grid__row">
-          <div class="grid__col--1of3">
-            <section class="section">
+          <div class="grid__col--1of3 grid__col--sm-1of2 grid__push--sm-1of4 grid__col--xs-full">
+            <section class="section section--triptych">
               <h3>Familiar API.</h3>
               <p>
                 Brooklyn iPhone blog, American Apparel selvage cardigan retro occupy
@@ -57,8 +58,8 @@
               </p>
             </section>
           </div>
-          <div class="grid__col--1of3">
-            <section class="section">
+          <div class="grid__col--1of3 grid__col--sm-1of2 grid__col--xs-full">
+            <section class="section section--triptych">
               <h3>Environmentally Friendly.</h3>
               <p>
                 Hoodie craft beer distillery, slow-carb Echo Park Helvetica jean shorts
@@ -66,8 +67,8 @@
               </p>
             </section>
           </div>
-          <div class="grid__col--1of3">
-            <section class="section">
+          <div class="grid__col--1of3 grid__col--sm-1of2 grid__col--xs-full">
+            <section class="section section--triptych">
               <h3>Permissive License.</h3>
               <p>
                 Bitters Portland synth cardigan art party, Kickstarter selvage yr
@@ -127,6 +128,26 @@
           <div class="grid__col--full">
             <section class="section">
               <h2 id="code-samples">Code Samples</h2>
+              <h3>HTTP Server</h3>
+              <pre>
+local http = require("http")
+
+http.createServer(function (req, res)
+  local body = "Hello world\n"
+
+  res:on("error", function(err)
+    print("Error while sending a response: " .. err)
+  end)
+
+  res:writeHead(200, {
+    ["Content-Type"] = "text/plain",
+    ["Content-Length"] = #body
+  })
+  res:finish(body)
+end):listen(8080)
+
+print("Server listening at http://localhost:8080/")
+              </pre>
               <p>
                 Bespoke literally tattooed, squid sartorial sustainable pickled Echo
                 Park retro Kickstarter Brooklyn fixie umami irony swag. Lumbersexual
@@ -141,6 +162,30 @@
                 before they sold out 90's photo booth distillery chambray, tattooed
                 occupy Banksy.
               </p>
+              <h3>HTTP Client</h3>
+              <pre>
+local http = require('http')
+
+local req = http.request({
+  host = "luvit.io",
+  port = 80,
+  path = "/"
+}, function (res)
+  res:on("error", function(err)
+    print("Error while receiving a response: " .. err)
+  end)
+
+  res:on("data", function (chunk)
+    p("ondata", {chunk=chunk})
+  end)
+end)
+
+req:on("error", function(err)
+  print("Error while sending a request: " .. err)
+end)
+
+req:done()
+              </pre>
               <p>
                 Single-origin coffee cardigan Neutra hoodie High Life kale chips.
                 Taxidermy Blue Bottle disrupt vegan, twee organic asymmetrical
@@ -151,6 +196,22 @@
                 Vice, put a bird on it swag gluten-free bicycle rights. Tote bag
                 occupy mlkshk jean shorts VHS craft beer. Typewriter fap Neutra yr.
               </p>
+              <h3>TCP Echo Server</h3>
+              <pre>
+local net = require('net')
+
+net.createServer(function (client)
+
+  -- Echo everything the client says back to itself
+  client:pipe(client)
+
+  -- Also log it to the server's stdout
+  client:pipe(process.stdout)
+
+end):listen(8080)
+
+print("TCP echo server listening on port 8080")
+              </pre>
               <p>
                 Pour-over fanny pack cliche, selvage readymade YOLO flexitarian
                 craft beer sartorial mustache chia locavore organic. Vinyl migas
@@ -181,5 +242,7 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="/js/prettify.min.js"></script>
+    <script type="text/javascript" src="/js/luvit-common.js"></script>
   </body>
 </html>

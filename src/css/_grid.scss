@@ -18,5 +18,46 @@
     @include m(1of3) {
       @include span-columns(4);
     }
+
+    @include m(2of3) {
+      @include span-columns(8);
+    }
+
+    @include m(sm-1of2) {
+      @include media($media-breakpoint-small) {
+        @include span-columns(6);
+      }
+    }
+
+    @include m(xs-full) {
+      @include media($media-breakpoint-xs) {
+        @include span-columns(12);
+      }
+    }
+
+    @include m(sm-full) {
+      @include media($media-breakpoint-small) {
+        @include span-columns(12);
+      }
+    }
+  }
+
+  @include e(push) {
+    @include m(sm-1of4) {
+      @include media($media-breakpoint-small) {
+        @include shift(3);
+      }
+      @include media($media-breakpoint-xs) {
+        @include shift(0);
+      }
+    }
+
+    @include m(lg-1of6) {
+      @include shift(2);
+
+      @include media($media-breakpoint-small) {
+        @include shift(0);
+      }
+    }
   }
 }

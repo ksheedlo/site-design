@@ -24,10 +24,16 @@ gulp.task('sass', function () {
 gulp.task('copy-deps', function () {
   gulp.src('./bower_components/normalize/normalize.css')
     .pipe(gulp.dest('./dist/css'));
+  gulp.src('./vendor/css/*.css')
+    .pipe(gulp.dest('./dist/css'));
+  gulp.src('./bower_components/google-code-prettify/bin/prettify.min.js')
+    .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('copy-demo', function () {
   gulp.src('./src/**/*.html')
+    .pipe(gulp.dest('./dist'));
+  gulp.src('./src/**/*.js')
     .pipe(gulp.dest('./dist'));
 });
 
