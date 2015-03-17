@@ -154,7 +154,8 @@ hr {
   padding: 8px 0 16px 0;
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 1000; }
   .top-nav__brand {
     color: #eee;
     padding: 12px;
