@@ -31,3 +31,17 @@ hr {
   border-style: solid;
   border-width: 1px;
 }
+
+.u-centerChild {
+  padding-left: 50%;
+}
+
+.u-positionScope {
+  position: relative;
+}
+
+.u-srOnly {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
