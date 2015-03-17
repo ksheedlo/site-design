@@ -11,9 +11,8 @@
   }
 
   @include e(subheading) {
-    font-family: $font-family-light;
     font-size: 30px;
-    font-weight: normal;
+    font-weight: 300;
     margin: 0 0 20px 0;
   }
 
@@ -21,8 +20,8 @@
     background-color: $color-luvit-blue;
     border-radius: 3px;
     border: 1px solid $color-white;
-    font-family: $font-family-light;
     font-size: 20px;
+    font-weight: 300;
     padding: 20px 30px;
     text-transform: uppercase;
   }
